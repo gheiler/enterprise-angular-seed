@@ -9,7 +9,7 @@
         "json:server": "json-server --delay 3000 --watch db.json",
         "format:fix": "pretty-quick --staged",
         "precommit": "concurrently \"npm run format:fix\" \" npm run lint\" ",
-        "deploy": "ng build --prod --bh /enterprise-angular-seed/ && angular-cli-ghpages --no-silent --repo=https://github.com/gheiler/on-angular-demo.git --name=\"Gabriel Heiler\" --email=gabrielheiler@gmail.com"
+        "deploy": "ng build --prod --bh /on-angular-demo/ && angular-cli-ghpages --no-silent --repo=https://github.com/gheiler/on-angular-demo.git --name=\"Gabriel Heiler\" --email=gabrielheiler@gmail.com"
     },
     "private": true,
     "dependencies": {
