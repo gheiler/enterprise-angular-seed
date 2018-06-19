@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../appcommon/services/user.service';
 import { User } from '../../../appcommon/models/user';
-import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'onr-users-list',
@@ -11,9 +11,13 @@ import { Observable } from 'rxjs/Observable';
 export class UsersListComponent implements OnInit {
     public users: User[];
 
-    constructor(private userService: UserService) {}
+    constructor(private userService: UserService, private router: Router) {}
 
     ngOnInit() {
         this.userService.getAll().subscribe(users => (this.users = users));
+    }
+
+    public goToEdit(id: number) {
+        this.router.navigate(['users/edit/' + id]);
     }
 }

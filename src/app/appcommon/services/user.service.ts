@@ -15,7 +15,18 @@ export class UserService {
 
     public getAll(): Observable<User[]> {
         return this.http
-            .get<CommonResponse<User>>(this.usersEndpoint)
+            .get<CommonResponse<User[]>>(this.usersEndpoint)
+            .map(response => {
+                return response.data;
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error);
+            });
+    }
+
+    public getById(id: number): Observable<User> {
+        return this.http
+            .get<CommonResponse<User>>(this.usersEndpoint + '/' + id)
             .map(response => {
                 return response.data;
             })
@@ -27,6 +38,17 @@ export class UserService {
     public add(user: User) {
         return this.http
             .post<CommonResponse<User>>(this.usersEndpoint, user)
+            .map(response => {
+                return response.data;
+            })
+            .catch((error: Response) => {
+                return Observable.throw(error);
+            });
+    }
+
+    public update(user: User) {
+        return this.http
+            .put<CommonResponse<User>>(this.usersEndpoint + '/' + user.id, user)
             .map(response => {
                 return response.data;
             })

@@ -1,0 +1,29 @@
+
+<form [formGroup]="userForm">
+    <input type="hidden" class="form-control" formControlName="id" >
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder=" Name" formControlName="name" >
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <select class="form-control" placeholder="language" formControlName="language">
+          <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <img src="" [class]="base64Image == null ? 'hidden' : ''" >
+    </div>
+    <div class="form-group">
+        <input type="file" class="form-control" placeholder="profileImage" 
+            formControlName="profileImage" (change)="onImageSelected($event)">
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder="password" formControlName="password">
+    </div>
+    <br/>
+    <div class="align-center">
+        <button type="submit" class="btn btn-default" [disabled]="!userForm.valid" (click)="saveUser()">{{ btnText }}</button>
+    </div>
+</form>

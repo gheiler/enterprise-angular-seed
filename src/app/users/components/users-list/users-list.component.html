@@ -8,6 +8,7 @@ Users:
           <p>{{item.email}}</p>
           <p>{{item.language}}</p>
           <img [src]="item.profileImage" />
+          <button (click)="goToEdit(item.id)">Edit</button>
         </ng-template>
     </ul>
 </div>
