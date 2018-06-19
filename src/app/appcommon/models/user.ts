@@ -1,5 +1,7 @@
-// import { Roles } from './roles';
-
 export interface User {
-  permissions: string[];
+    id?: number;
+    name: string;
+    email: string;
+    password: string;
+    profileImage: string;
 }

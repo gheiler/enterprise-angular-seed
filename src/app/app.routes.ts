@@ -5,6 +5,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 export const ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', loadChildren: './home/home.module#HomeModule', data: { state: 'home' } },
-    { path: 'demo', loadChildren: './demo/demo.module#DemoModule', data: { state: 'demo' } },
+    { path: 'users', loadChildren: './users/users.module#UsersModule', data: { state: 'users' } },
     { path: '**', component: PageNotFoundComponent }
 ];
