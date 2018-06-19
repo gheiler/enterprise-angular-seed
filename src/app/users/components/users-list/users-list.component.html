@@ -3,7 +3,7 @@ Users:
 </h3>
 <div >
     <ul>
-        <ng-template ngFor let-item [ngForOf]="users" let-currentElementIndex="index + 1" [ngForTrackBy]="trackByFn">
+        <ng-template ngFor let-item [ngForOf]="users" let-currentElementIndex="index + 1">
           <h4>{{item.name}}</h4>
           <p>{{item.email}}</p>
           <p>{{item.language}}</p>
